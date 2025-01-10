@@ -1,0 +1,207 @@
+/* Custom Theme for PeaPodCMS Docs */
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #f7f7f7; /* Light background */
+    color: #333; /* Dark text */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #2e3b4e; /* Dark sidebar */
+    color: #ffffff; /* Light text */
+    width: 250px;
+}
+
+.sidebar a {
+    color: #cdd9e5; /* Light link color */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    color: #ffffff; /* Highlight on hover */
+}
+
+.sidebar .active {
+    color: #ff9800; /* Highlight active link */
+    font-weight: bold;
+}
+
+/* Content Styles */
+.content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for content */
+    border-radius: 8px; /* Subtle rounding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: #2e3b4e; /* Dark headings */
+    margin-top: 1.5em;
+}
+
+.content a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Code Blocks */
+pre {
+    background-color: #f5f5f5; /* Light gray background for code */
+    border: 1px solid #ddd; /* Subtle border */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto; /* Horizontal scroll for long code */
+}
+
+code {
+    font-family: 'Roboto Mono', monospace; /* Monospaced font for code */
+    color: #e83e8c; /* Distinct code color */
+}
+
+/* Lists */
+ul {
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f0f0f0; /* Subtle background for headers */
+}
+
+/* Search Box */
+.search {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    color: #333;
+}
+
+.search input {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    border: none;
+    outline: none;
+    width: calc(100% - 20px);
+}
+
+.search input:focus {
+    border: 1px solid #007bff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* GitHub Corner Styles */
+.github-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    z-index: 1000;
+}
+
+.github-corner svg {
+    fill: #151513; /* Background color */
+    color: #fff;   /* Logo color */
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    width: 80px;
+    height: 80px;
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%, 100% { transform: rotate(0); }
+    20%, 60% { transform: rotate(-25deg); }
+    40%, 80% { transform: rotate(10deg); }
+}
+
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background-color: #2e3b4e; /* Same as sidebar background */
+    color: #ffffff; /* Icon color */
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.sidebar-toggle:hover {
+    background-color: #1a2533; /* Darker on hover */
+}
+
+/* When Sidebar is Collapsed */
+.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-collapsed .content {
+    margin-left: 0 !important;
+}
+
+.sidebar-collapsed .sidebar-toggle {
+    left: 10px;
+}
