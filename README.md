@@ -8,4 +8,4 @@ PeaPodCMS is a lightweight, modular content management system designed for simpl
 - [References](docs/REFERENCES.md)
 
 ## Documentation
-Full documentation is available [here](docs/README.md).
+[Full documentation is available here.](docs/README.md)
