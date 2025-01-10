@@ -1,0 +1,26 @@
+{
+  "name": "peapodcms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulirv/peapodcms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulirv/peapodcms/issues"
+  },
+  "homepage": "https://github.com/paulirv/peapodcms#readme",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.6",
+    "preact": "^10.25.4",
+    "preact-router": "^4.1.2"
+  }
+}
