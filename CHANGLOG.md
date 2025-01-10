@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 ## [Unreleased]
 ### Added
 - Initial project structure with Webpack, Babel, and Preact setup.
+- Initial documentation for the project.
+- Custom Docsify theme in `theme.css`.
+- Sidebar navigation in `_sidebar.md`.
 
 ### Changed
 - Updated Webpack configuration to include `mode`.
