@@ -1,11 +1,12 @@
 import { h } from 'preact'; // Ensure this is imported
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect, useMemo } from 'preact/hooks';
 import { getMarkdownContent } from '../utils/fetchMarkdown';
 import { parseMarkdown } from '../utils/markdownParser';
 
 const Page = ({ name }) => {
   const [content, setContent] = useState(null);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -17,28 +18,43 @@ const Page = ({ name }) => {
         console.error(`Failed to fetch content for: ${name}`);
         console.error(err.message);
         setError(`Could not load content for: ${name}`);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchContent();
   }, [name]);
 
+  const htmlContent = useMemo(
+    () => (content ? parseMarkdown(content.content) : ''),
+    [content]
+  );
+
+  if (isLoading) {
+    return <p>Loading...</p>; // Add a spinner or loader for better UX
+  }
+
   if (error) {
     return <p>{error}</p>;
   }
 
   if (!content) {
-    return <p>Loading...</p>;
+    return <p>No content available for this page.</p>;
   }
 
-  const htmlContent = parseMarkdown(content.content);
+  const { title = 'Untitled', description = 'No description available' } =
+    content.data;
 
   return (
     <main>
-      <h1>{content.data.title}</h1>
-      <p>{content.data.description}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
       <hr />
-      <section dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <section
+        className="markdown-content"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
     </main>
   );
 };
