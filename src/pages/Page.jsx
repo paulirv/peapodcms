@@ -2,8 +2,6 @@ import { h } from 'preact';
 import { useState, useEffect, useMemo } from 'preact/hooks';
 import { getMarkdownContent } from '../utils/fetchMarkdown';
 import { parseMarkdown } from '../utils/markdownParser';
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 
 const Page = ({ name }) => {
   const [content, setContent] = useState(null);
