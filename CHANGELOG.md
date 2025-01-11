@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/paulirv/peapodcms/compare/v1.3.0...v1.4.0) (2025-01-11)
+
+
+### Features
+
+* change body tag to use id for app container in index.html ([5fd3d5d](https://github.com/paulirv/peapodcms/commit/5fd3d5d839d51dff6b1d35b69bb376b98d3a0efa))
+* refactor App component to use Fragment and update Page component structure ([f59d945](https://github.com/paulirv/peapodcms/commit/f59d9454f997ad93b00f9596afdf17ee5329d4a2))
+* update Babel configuration to use automatic runtime for Preact ([94337f2](https://github.com/paulirv/peapodcms/commit/94337f27eb483eb000f4105ef160e9fb4c232633))
+
 ## [1.3.0](https://github.com/paulirv/peapodcms/compare/v1.2.2...v1.3.0) (2025-01-11)
 
 
