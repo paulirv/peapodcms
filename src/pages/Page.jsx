@@ -1,6 +1,7 @@
 import { h } from 'preact'; // Ensure this is imported
 import { useState, useEffect } from 'preact/hooks';
 import { getMarkdownContent } from '../utils/fetchMarkdown';
+import { parseMarkdown } from '../utils/markdownParser';
 
 const Page = ({ name }) => {
   const [content, setContent] = useState(null);
@@ -30,11 +31,14 @@ const Page = ({ name }) => {
     return <p>Loading...</p>;
   }
 
+  const htmlContent = parseMarkdown(content.content);
+
   return (
     <main>
       <h1>{content.data.title}</h1>
       <p>{content.data.description}</p>
-      <div dangerouslySetInnerHTML={{ __html: content.content }} />
+      <hr />
+      <section dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </main>
   );
 };
