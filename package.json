@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/paulirv/peapodcms#readme",
   "dependencies": {
+    "@babel/runtime": "^7.26.0",
     "buffer": "^6.0.3",
     "core-js": "^3.40.0",
     "gray-matter": "^4.0.3",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
     "@testing-library/jest-dom": "^6.6.3",
