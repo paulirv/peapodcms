@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h } from 'preact'; // Ensure this is imported
 import { useState, useEffect } from 'preact/hooks';
 import { getMarkdownContent } from '../utils/fetchMarkdown';
 
@@ -9,7 +9,7 @@ const Page = ({ name }) => {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        console.log(`Fetching: /content/pages/${name}.md`); // Log fetch URL
+        console.log(`Fetching: /content/pages/${name}.md`);
         const data = await getMarkdownContent('/content/pages', name);
         setContent(data);
       } catch (err) {
@@ -19,8 +19,8 @@ const Page = ({ name }) => {
       }
     };
 
-    fetchContent(); // Call the async function
-  }, [name]); // Dependency array ensures it runs when 'name' changes
+    fetchContent();
+  }, [name]);
 
   if (error) {
     return <p>{error}</p>;
@@ -31,11 +31,11 @@ const Page = ({ name }) => {
   }
 
   return (
-    <div>
+    <main>
       <h1>{content.data.title}</h1>
       <p>{content.data.description}</p>
       <div dangerouslySetInnerHTML={{ __html: content.content }} />
-    </div>
+    </main>
   );
 };
 
