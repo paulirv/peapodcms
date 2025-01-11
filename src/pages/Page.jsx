@@ -1,4 +1,4 @@
-import { h } from 'preact'; // Ensure this is imported
+import { h } from 'preact';
 import { useState, useEffect, useMemo } from 'preact/hooks';
 import { getMarkdownContent } from '../utils/fetchMarkdown';
 import { parseMarkdown } from '../utils/markdownParser';
@@ -11,12 +11,10 @@ const Page = ({ name }) => {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        console.log(`Fetching: /content/pages/${name}.md`);
         const data = await getMarkdownContent('/content/pages', name);
         setContent(data);
       } catch (err) {
         console.error(`Failed to fetch content for: ${name}`);
-        console.error(err.message);
         setError(`Could not load content for: ${name}`);
       } finally {
         setIsLoading(false);
@@ -26,13 +24,35 @@ const Page = ({ name }) => {
     fetchContent();
   }, [name]);
 
+  useEffect(() => {
+    if (content) {
+      // Update the document title
+      if (content.data.title  == 'Home') {
+        document.title = 'PeaPodCMS';
+      } else {
+        document.title = content.data.title + ' | PeaPodCMS' || 'PeaPodCMS';
+      }
+
+      // Update the meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          'content',
+          content.data.description || 'Default description for PeaPodCMS.'
+        );
+      } else {
+        console.warn('No <meta name="description"> tag found in the document.');
+      }
+    }
+  }, [content]);
+
   const htmlContent = useMemo(
     () => (content ? parseMarkdown(content.content) : ''),
     [content]
   );
 
   if (isLoading) {
-    return <p>Loading...</p>; // Add a spinner or loader for better UX
+    return <p>Loading...</p>;
   }
 
   if (error) {
