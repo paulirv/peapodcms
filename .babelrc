@@ -1,6 +1,6 @@
 {
-    "presets": [
-      ["@babel/preset-env", { "targets": "defaults" }],
-      ["@babel/preset-react", { "pragma": "h" }]
-    ]
-  }
+  "presets": [
+    ["@babel/preset-env", { "targets": "defaults" }],
+    ["@babel/preset-react", { "runtime": "automatic", "importSource": "preact" }]
+  ]
+}
