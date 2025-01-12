@@ -4,14 +4,15 @@
       "@babel/preset-env",
       {
         "targets": "> 0.25%, not dead", // Modern browsers and active environments
-        "useBuiltIns": false, // Disable global polyfilling; handled by @babel/plugin-transform-runtime
-        "modules": false // Enable tree-shaking
+        "useBuiltIns": "entry", // Ensure polyfills are loaded when needed
+        "corejs": 3, // Explicitly define CoreJS version
+        "modules": false // Preserve ES Modules for tree-shaking
       }
     ],
     [
       "@babel/preset-react",
       {
-        "runtime": "automatic", // Enable new JSX transform
+        "runtime": "automatic", // Use the new JSX runtime
         "importSource": "preact" // Optimize for Preact
       }
     ]
@@ -20,10 +21,10 @@
     [
       "@babel/plugin-transform-runtime",
       {
-        "corejs": 3, // Enable modular core-js polyfills
+        "corejs": 3, // Modular polyfills with CoreJS
         "regenerator": true, // Include regenerator-runtime for async/await
-        "helpers": true, // Avoid duplication of helper code
-        "version": "^7.0.0-beta.0" // Optional; ensures compatibility
+        "helpers": true, // Avoid duplication of Babel helpers
+        "version": "7.0.0" // Lock plugin version to ensure compatibility
       }
     ]
   ]
