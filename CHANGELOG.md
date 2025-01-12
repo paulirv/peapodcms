@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/paulirv/peapodcms/compare/v1.4.0...v1.5.0) (2025-01-12)
+
+
+### Features
+
+* add @babel/runtime and @babel/plugin-transform-runtime for improved Babel support ([842adbb](https://github.com/paulirv/peapodcms/commit/842adbbec2e52897305579104d52e099c7854ce9))
+* add @testing-library/jest-dom for enhanced testing capabilities ([f853037](https://github.com/paulirv/peapodcms/commit/f85303740e4c632f1fbb1ef119e97f18270e74c8))
+* add browserslist configuration ([4ba89e5](https://github.com/paulirv/peapodcms/commit/4ba89e5383040fc7d42b746b6b3358032dddeca4))
+* add core-js and regenerator-runtime for improved compatibility and async support ([0dcca26](https://github.com/paulirv/peapodcms/commit/0dcca2696597e19eeeecb99ea2c30941cce003ec))
+* add core-js dependency for improved compatibility and polyfill support ([30ffe87](https://github.com/paulirv/peapodcms/commit/30ffe874a36c8ff25f467cf9a5748fd2b11fd214))
+* add jest and babel-jest for improved testing support ([9e4a8f5](https://github.com/paulirv/peapodcms/commit/9e4a8f57c02d44efc48affa47c52c933afcc9611))
+* add Jest configuration for testing with Babel and jsdom ([185b3a2](https://github.com/paulirv/peapodcms/commit/185b3a2b1677a22f9320b2721af3c6cc25d4f6f5))
+* add jest.setup.js for configuring @testing-library/jest-dom ([fcc62b8](https://github.com/paulirv/peapodcms/commit/fcc62b85eacae8a120ac1c7933fc0d1c311236b6))
+* add Makefile for project build, testing, and deployment automation ([565aceb](https://github.com/paulirv/peapodcms/commit/565acebf82199b65629c226cd1ce80e6d0288ef4))
+* add markdown parser utility using marked library ([caf91b7](https://github.com/paulirv/peapodcms/commit/caf91b7b3dba6740963454f82537c1e59d84de8b))
+* add module type and jest-environment-jsdom for improved module support and testing ([e52312e](https://github.com/paulirv/peapodcms/commit/e52312e54661b63fca1001bbace05473d843c5c2))
+* integrate markdown parsing into Page component ([686bc1d](https://github.com/paulirv/peapodcms/commit/686bc1d89cf5b7bc50cfde41446b099003782c1a))
+* migrate webpack configuration to ES module syntax and handle __dirname ([a87d132](https://github.com/paulirv/peapodcms/commit/a87d132da10f685b7f0797e802a63e9c1e77f9e7))
+* restore buffer and path-browserify dependencies in package.json and package-lock.json ([27ea630](https://github.com/paulirv/peapodcms/commit/27ea630571276ee7d7158a9a343de8c8b518dd39))
+* restore core-js dependency in package.json and package-lock.json ([6c8149e](https://github.com/paulirv/peapodcms/commit/6c8149e2fd26cefda3b7d4b06499c3485aedac58))
+* update Babel configuration for improved compatibility and polyfill management ([ebb7c68](https://github.com/paulirv/peapodcms/commit/ebb7c6897677996e7eacbd10219fac26f27f1ade))
+* update Babel configuration for improved polyfill management and enable tree-shaking ([3fddd60](https://github.com/paulirv/peapodcms/commit/3fddd60d4c84d7df14d44d2a6784ff49b0460f9e))
+* update import statements to include file extensions and add error handling for rendering ([33eb43f](https://github.com/paulirv/peapodcms/commit/33eb43f26813ff6c6748d173154bf6dfcc238957))
+* update import statements to include file extensions and improve error logging in Page component ([af93ed9](https://github.com/paulirv/peapodcms/commit/af93ed912443d2633633aea93c24d594fce314ab))
+* update Jest configuration for improved testing and add Markdown rendering tests ([6596dce](https://github.com/paulirv/peapodcms/commit/6596dce6edac3f56428b94e1b50e2b64099d558f))
+* update Page component to set document title and meta description based on content ([f295bdf](https://github.com/paulirv/peapodcms/commit/f295bdf083a97a1d7217e819a229a95196a4a1b5))
+* update test scripts to use Jest for improved testing experience ([7d4c014](https://github.com/paulirv/peapodcms/commit/7d4c0146044a018464709ddb356fa21fdaa465ad))
+
 ## [1.4.0](https://github.com/paulirv/peapodcms/compare/v1.3.0...v1.4.0) (2025-01-11)
 
 
