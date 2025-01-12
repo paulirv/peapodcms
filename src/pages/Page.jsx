@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect, useMemo } from 'preact/hooks';
-import { getMarkdownContent } from '../utils/fetchMarkdown';
-import { parseMarkdown } from '../utils/markdownParser';
+import { getMarkdownContent } from '../utils/fetchMarkdown.js';
+import { parseMarkdown } from '../utils/markdownParser.js';
 
 const Page = ({ name }) => {
   const [content, setContent] = useState(null);
@@ -14,7 +14,7 @@ const Page = ({ name }) => {
         const data = await getMarkdownContent('/content/pages', name);
         setContent(data);
       } catch (err) {
-        console.error(`Failed to fetch content for: ${name}`);
+        console.error(`Failed to fetch content for: ${name}`, err);
         setError(`Could not load content for: ${name}`);
       } finally {
         setIsLoading(false);
@@ -27,11 +27,8 @@ const Page = ({ name }) => {
   useEffect(() => {
     if (content) {
       // Update the document title
-      if (content.data.title  == 'Home') {
-        document.title = 'PeaPodCMS';
-      } else {
-        document.title = content.data.title + ' | PeaPodCMS' || 'PeaPodCMS';
-      }
+      const pageTitle = content.data.title === 'Home' ? 'PeaPodCMS' : `${content.data.title} | PeaPodCMS`;
+      document.title = pageTitle;
 
       // Update the meta description
       const metaDescription = document.querySelector('meta[name="description"]');
@@ -63,8 +60,7 @@ const Page = ({ name }) => {
     return <p>No content available for this page.</p>;
   }
 
-  const { title = 'Untitled', description = 'No description available' } =
-    content.data;
+  const { title = 'Untitled', description = 'No description available' } = content.data;
 
   return (
     <main>
