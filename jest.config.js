@@ -1,8 +1,11 @@
-module.exports = {
-    testEnvironment: "jsdom", // Simulate a browser environment
-    transform: {
-      "^.+\\.jsx?$": "babel-jest", // Use Babel to transpile JavaScript/JSX files
-    },
-    moduleFileExtensions: ["js", "jsx"], // Recognize both .js and .jsx files
-    setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // Optional: Setup file for global configs
-  };
+export default {
+  testEnvironment: "jest-environment-jsdom", // Use JSDOM for DOM-based tests
+  transform: {
+    "^.+\\.jsx?$": "babel-jest", // Use Babel to transform JavaScript/JSX
+  },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // Load setup file for Jest DOM
+  moduleNameMapper: {
+    "\\.(css|scss)$": "identity-obj-proxy", // Mock CSS imports
+  },
+  transformIgnorePatterns: ["/node_modules/(?!@testing-library)"], // Ensure dependencies are transformed
+};
