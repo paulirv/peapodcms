@@ -1,9 +1,15 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import webpack from 'webpack';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-module.exports = {
+// Handle __dirname in ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
   mode: 'development', // Explicitly set mode to 'development' for now
   entry: './src/index.js',
   output: {
@@ -28,8 +34,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     fallback: {
-      buffer: require.resolve('buffer/'),
-      path: require.resolve('path-browserify'),
+      buffer: 'buffer/', // Provide Buffer fallback for browser
+      path: 'path-browserify', // Use path-browserify for browser environments
     },
   },
   plugins: [
